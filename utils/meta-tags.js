@@ -7,6 +7,6 @@ module.exports = function renderHtmlWithMeta(title, description, image, url, tim
         <meta property="og:image" content="${image}">
         
         <!--        redirect is here: -->
-        <meta http-equiv="refresh" content="${timeout};url=${url}" />
+        <meta http-equiv="refresh" content="${timeout};url=${url}/public" />
         <body></body></html>`
 }

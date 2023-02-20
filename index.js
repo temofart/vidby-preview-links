@@ -29,16 +29,15 @@ app.get("/order/:id/share", (req, res) => {
                     ))
                 }
             }
-            // if BOT isn't detected return to app immediately with timeout 0
-            return res.send(`<html><meta http-equiv="refresh" content="0;url=${url}" /></html>`)
+            // if BOT isn't detected return to app immediately
+            return res.send(`<html><meta http-equiv="refresh" content="0;url=${url}/public" /></html>`)
         })
         .catch(err => {
             console.log('Request to vidby api failed: ', err)
             // onerror redirect to main app as well
-            return res.send(`<html><meta http-equiv="refresh" content="0;url=${url}" /></html>`)
+            return res.send(`<html><meta http-equiv="refresh" content="0;url=${url}/public" /></html>`)
         })
 });
-// Important: Probably redirects should be used via nginx methods, not meta tag.
 app.listen(3000, () => {
     console.log("Listen on the port 3000...");
 });
